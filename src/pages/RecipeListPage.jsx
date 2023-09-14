@@ -1,6 +1,6 @@
 import { Center, Heading } from "@chakra-ui/react";
 import { data } from "../utils/data";
-import { Card } from "../components/card";
+import { Card } from "../components/Card";
 import { TextInput } from "../components/ui/TextInput";
 
 export const RecipeListPage = () => {
