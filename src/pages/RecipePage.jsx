@@ -5,7 +5,7 @@ export const RecipePage = ({ recipe, clickFn }) => {
   return (
     <Flex backgroundColor={"blue.500"}>
       <Flex
-        w={{ base: "100%", md: "80&", lg: "70%" }}
+        w={{ base: "100%", md: "80%", lg: "70%" }}
         h={"100%"}
         minH={"100vh"}
         margin={"0 auto"}
