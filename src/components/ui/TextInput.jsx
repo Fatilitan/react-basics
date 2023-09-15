@@ -1,9 +1,14 @@
 import { Input } from "@chakra-ui/react";
 
-export const TextInput = () => {
+export const TextInput = ({ changeFn, ...props }) => {
   return (
     <>
-      <Input bg={"white"} w={"50%"} />
+      <Input
+        bg={"white"}
+        onChange={changeFn}
+        {...props}
+        w={{ base: "100%", md: "50%" }}
+      />
     </>
   );
 };
