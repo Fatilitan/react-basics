@@ -1,7 +1,7 @@
 import { Box, Heading, Image, Flex, Text } from "@chakra-ui/react";
 import { Label } from "./ui/Label";
 
-export const Card = ({ recipe }) => {
+export const Card = ({ recipe, clickFn }) => {
   return (
     <>
       <Box
@@ -16,6 +16,7 @@ export const Card = ({ recipe }) => {
           boxShadow: "rgba(0, 0, 0, 0.6) 2px 3px 20px",
           transform: "translateY(5px)",
         }}
+        onClick={() => clickFn(recipe)}
       >
         <Image
           src={recipe.image}

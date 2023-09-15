@@ -1,10 +1,10 @@
-import { Center, Heading } from "@chakra-ui/react";
+import { Center, Flex, Heading } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { Card } from "../components/Card";
 import { TextInput } from "../components/ui/TextInput";
 import { useState } from "react";
 
-export const RecipeListPage = () => {
+export const RecipeListPage = ({ clickFn }) => {
   const allRecipes = data.hits;
 
   const [searchField, setSearchField] = useState("");
@@ -24,20 +24,22 @@ export const RecipeListPage = () => {
 
   return (
     <>
-      <Center
+      <Flex
         minHeight={"100vh"}
         h="100%"
         flexDir={{ base: "column", sm: "row" }}
-        padding={"2em"}
+        padding={{ base: "2em 0 0 0", md: "2em" }}
         flexWrap={"wrap"}
         bg={"blue.500"}
-        gap={6}
+        justifyContent={"center"}
       >
-        <Heading w={"100%"} as={"h1"} color={"white"} textAlign={"center"}>
-          Winc recipe checker
-        </Heading>
-        <Center w={"100%"}>
-          <TextInput onChange={handleChange} />
+        <Center flexWrap={"wrap"} h={"7em"}>
+          <Heading w={"100%"} as={"h1"} color={"white"} textAlign={"center"}>
+            Winc recipe checker
+          </Heading>
+          <Center w={"100%"}>
+            <TextInput onChange={handleChange} />
+          </Center>
         </Center>
         <Center
           flexDir={"row"}
@@ -49,10 +51,10 @@ export const RecipeListPage = () => {
           height={"100%"}
         >
           {matchedRecipes.map((recipe) => (
-            <Card key={recipe.calories} recipe={recipe} />
+            <Card key={recipe.calories} recipe={recipe} clickFn={clickFn} />
           ))}
         </Center>
-      </Center>
+      </Flex>
     </>
   );
 };
